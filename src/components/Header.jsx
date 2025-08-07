@@ -1,4 +1,4 @@
-import { HeaderContainer, Logo, CartIcon, LogoLink } from './Header.styles.jsx';
+import { HeaderContainer, Logo, LogoLink, CartLink, CartIcon } from './Header.styles.jsx';
 import LogoImg from '../assets/images/Logo.png'
 
 export default function Header() {
@@ -6,8 +6,10 @@ export default function Header() {
     <HeaderContainer>
     <LogoLink href="/">
         <Logo src={LogoImg} alt="Logo Marvel" />
-      </LogoLink>
-      <CartIcon className="bi bi-cart" />
+    </LogoLink>
+    <CartLink href="/cart">
+        <CartIcon className="bi bi-cart" />
+    </CartLink>
     </HeaderContainer>
   );
 }
