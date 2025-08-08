@@ -16,6 +16,11 @@ export const Card = styled.div`
     transform: scale(1.05);
     box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.5);
   }
+
+  @media (min-width: 768px) {
+    width: 300px;
+   height: 500px;
+  }
 `;
 
 export const ComicImage = styled.img`

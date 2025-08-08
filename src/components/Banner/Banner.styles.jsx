@@ -29,7 +29,7 @@ export const BannerContainer = styled.section`
   width: 100vw;
   height: 100vh;
 
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     justify-content: space-between;
     padding: 5rem;
 
@@ -139,7 +139,7 @@ export const ImageCarrousel = styled.div`
   position: relative;
   z-index: 1;
 
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     display: flex;
   }
 `;

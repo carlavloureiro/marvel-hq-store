@@ -6,8 +6,8 @@ const spin = keyframes`
 `;
 
 export const Spinner = styled.div`
-  border: 4px solid #f3f3f3; /* cor clara para o fundo */
-  border-top: 4px solid #202020; /* cor escura para a parte giratória */
+  border: 4px solid #f3f3f3; 
+  border-top: 4px solid #202020; 
   border-radius: 50%;
   width: 40px;
   height: 40px;

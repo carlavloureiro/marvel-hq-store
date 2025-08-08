@@ -57,13 +57,13 @@ export default function HqDetail() {
       <Header />
       <DetailContainer>
         <ComicWrapper>
+          <ComicImage src={imageUrl} alt={hq.title} />
           <ComicInfo>
             <Title>{hq.title}</Title>
             <Description>{hq.description || 'Sem descrição disponível.'}</Description>
             <Price>Preço: ${price}</Price>
-            <ButtonCart onClick={handleAddToCart}>Adicionar ao carrinho</ButtonCart>
+            <ButtonCart onClick={handleAddToCart}>Adicionar ao carrinho<i class="bi bi-cart4"></i></ButtonCart>
           </ComicInfo>
-          <ComicImage src={imageUrl} alt={hq.title} />
         </ComicWrapper>
       </DetailContainer>
     </>

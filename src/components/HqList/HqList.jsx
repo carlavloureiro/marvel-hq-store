@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchHQs } from '../../services/marvelApi';
 import { Container, Title, CardsWrapper, Pagination, NavButton, EmptyMessage, Spinner } from './HqList.styles';
-import HQCard from '../HqCard/HQCard';
+import HqCard from '../HqCard/HqCard';
 
 export default function HQList() {
   const [hqs, setHqs] = useState([]);
@@ -49,7 +49,7 @@ export default function HQList() {
         <>
           <CardsWrapper>
             {hqs.map((comic) => (
-              <HQCard key={comic.id} comic={comic} />
+              <HqCard key={comic.id} comic={comic} />
             ))}
           </CardsWrapper>
 
