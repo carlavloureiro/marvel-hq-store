@@ -47,7 +47,7 @@ export const Price = styled.p`
   margin-bottom: 1.5rem;
 `;
 
-export const Button = styled.button`
+export const ButtonCart = styled.button`
   background-color: #e62429;
   color: white;
   border: none;

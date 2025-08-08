@@ -16,6 +16,9 @@ export const Spinner = styled.div`
 `;
 
 export const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 2rem;
 `;
 
@@ -29,14 +32,16 @@ export const Title = styled.div`
 export const CardsWrapper = styled.div`
   display: flex;
   justify-content: center;
+  width: 70%;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 3rem;
 `;
 
 export const Pagination = styled.div`
   margin-top: 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const NavButton = styled.button`
@@ -51,7 +56,7 @@ export const NavButton = styled.button`
 
   &:disabled {
     background-color: white;
-    color: #F5F5F5;
+    color: #C5C5C5;
     cursor: not-allowed;
   }
 `;

@@ -100,9 +100,9 @@ export const NavLink = styled(BaseLink)``;
 export const CartLink = styled(BaseLink)``;
 
 export const CartIcon = styled.i`
-  color: #FAFAFA;
   font-size: 2rem;
   margin-right: 1rem;
+  color: ${({ isScrolled }) => (isScrolled ? '#FAFAFA' : '#FAFAFA')};
 
   @media (min-width: 768px) {
     color: #202020;

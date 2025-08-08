@@ -8,7 +8,7 @@ export default function AppRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/hq/:id" element={<HqDetail />} />
-      <Route path="/carrinho" element={<Cart />} />
+      <Route path="/cart" element={<Cart />} />
     </Routes>
   );
 }

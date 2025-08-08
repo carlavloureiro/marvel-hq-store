@@ -35,5 +35,7 @@ export async function fetchHQs(offset = 0, limit = 20) {
     !comic.thumbnail?.path.includes('image_not_available')
   );
 
-  return { ...json.data, results };
+  const total = Math.min(json.data.total, 120); 
+
+  return { ...json.data, total, results };
 };

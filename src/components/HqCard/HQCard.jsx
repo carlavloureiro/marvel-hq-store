@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import {Card, ComicImage, ComicInfo } from './HqCard.styles';
+import { Card, ComicImage, ComicInfo } from './HqCard.styles';
 
 export default function HQCard({ comic }) {
   const { id, title, thumbnail, prices } = comic;
@@ -7,14 +7,16 @@ export default function HQCard({ comic }) {
   const imageUrl = `${thumbnail.path}.${thumbnail.extension}`;
 
   return (
-    <Link to={`/hq/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-      <Card>
-        <ComicImage src={imageUrl} alt={title} />
-        <ComicInfo>
-          <h3>{title}</h3>
-          <p>Preço: ${price}</p>
-        </ComicInfo>
-      </Card>
-    </Link>
-  );
+      <Link to={`/hq/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Card>
+          <ComicImage src={imageUrl} alt={title} />
+          <ComicInfo>
+            <h3>{title}</h3>
+            <div>
+              <p>${price}</p>
+            </div>
+          </ComicInfo>
+        </Card>
+      </Link>
+);
 }
