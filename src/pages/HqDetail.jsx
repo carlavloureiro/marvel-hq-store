@@ -1,6 +1,11 @@
-import { useParams } from 'react-router-dom';
+import Header from '../components/Header/Header';
+import ComicDetail from '../components/ComicDetail/ComicDetail'
 
 export default function HqDetail() {
-  const { id } = useParams();
-  return <h1>Detalhes da HQ - ID: {id}</h1>;
+  return (
+    <>
+      <Header />
+      <ComicDetail />
+    </>
+  );
 }
