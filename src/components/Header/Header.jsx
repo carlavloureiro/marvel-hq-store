@@ -1,17 +1,6 @@
 import { useEffect, useState } from 'react';
-import {
-  HeaderContainer,
-  Logo,
-  LogoLink,
-  CartLink,
-  CartIcon,
-  NavBar,
-  NavItem,
-  NavLink,
-  HamburgerButton,
-  MobileMenu
-} from './Header.styles.jsx';
-import LogoImg from '../assets/images/Logo.png';
+import { HeaderContainer, Logo, LogoLink, HamburgerButton, MobileMenu, NavBar, NavItem, NavLink, CartLink, CartIcon } from './Header.styles.jsx';
+import LogoImg from '../../assets/images/Logo.png';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);

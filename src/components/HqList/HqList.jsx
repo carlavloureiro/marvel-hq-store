@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { fetchHQs } from '../services/marvelApi';
+import { fetchHQs } from '../../services/marvelApi';
 import { Container, Title, CardsWrapper, Pagination, NavButton } from './HqList.styles'
-import HQCard from '../components/HQCard';
+import HQCard from '../HqCard/HQCard';
 
 export default function HQList() {
   const [hqs, setHqs] = useState([]);
@@ -27,7 +27,7 @@ export default function HQList() {
   }
 
   return (
-    <Container>
+    <Container id="hq-list">
       <Title>HQs Marvel</Title>
 
       <CardsWrapper>

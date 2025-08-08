@@ -1,10 +1,11 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const BaseLink = styled.a`
   display: inline-block;
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+  font-family: "Orbitron", sans-serif;
 
   &:hover {
     text-decoration: none;
@@ -17,16 +18,23 @@ export const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  padding: 2rem 3rem;
-  color: #fff;
+  width: 100vw;
+  height: auto;
+  padding: 1rem;
+  justify-content: center;
+  gap: 4rem;
+  color: #F5F5F5;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   z-index: 1000;
 
-  background-color: ${({ isScrolled }) => (isScrolled ? 'rgba(32, 32, 32, 1)' : 'transparent')};
+  background-color: ${({ isScrolled }) => (isScrolled ? '#1C1C1C' : 'transparent')};
   transition: background-color 0.3s ease;
+
+  @media (min-width: 768px) {
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
 `;
 
 export const Logo = styled.img`
@@ -38,12 +46,17 @@ export const Logo = styled.img`
     width: 9rem;
   }
 
+  @media (min-width: 564px) {
+    margin-right: 6rem;
+  }
+
   @media (min-width: 768px) {
     width: 14rem;
   }
 `;
 
 export const LogoLink = styled(BaseLink)``;
+
 
 export const HamburgerButton = styled.i`
   font-size: 2rem;
@@ -71,29 +84,27 @@ export const MobileMenu = styled.nav`
 
 export const NavBar = styled.nav`
   display: none;
-  gap: 5rem;
-  align-items: center;
-  margin-right: 5rem;
-
+ 
   @media (min-width: 768px) {
     display: flex;
+    gap: 6rem;
+    margin-right: 20%;
   }
 `;
 
-export const NavItem = styled.div``;
-
-export const NavLink = styled.a`
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-
-  &:hover {
-    color: #f00;
-  }
+export const NavItem = styled.div`
 `;
+
+export const NavLink = styled(BaseLink)``;
 
 export const CartLink = styled(BaseLink)``;
 
 export const CartIcon = styled.i`
+  color: #FAFAFA;
   font-size: 2rem;
+  margin-right: 1rem;
+
+  @media (min-width: 768px) {
+    color: #202020;
+  }
 `;
