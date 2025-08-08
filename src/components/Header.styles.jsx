@@ -18,22 +18,79 @@ export const HeaderContainer = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(32, 32, 32, 0.6);
-  padding: 1rem 2rem;
+  padding: 2rem 3rem;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
+
+  background-color: ${({ isScrolled }) => (isScrolled ? 'rgba(32, 32, 32, 1)' : 'transparent')};
+  transition: background-color 0.3s ease;
 `;
 
 export const Logo = styled.img`
-  width: 8rem;
+  width: 7rem; 
   height: auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  @media (min-width: 480px) {
+    width: 9rem;
+  }
+
+  @media (min-width: 768px) {
+    width: 14rem;
+  }
 `;
 
 export const LogoLink = styled(BaseLink)``;
+
+export const HamburgerButton = styled.i`
+  font-size: 2rem;
+
+  @media (min-width: 768px) {
+    display: none; 
+  }
+`
+
+export const MobileMenu = styled.nav`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(32, 32, 32, 0.95);
+  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 2rem;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const NavBar = styled.nav`
+  display: none;
+  gap: 5rem;
+  align-items: center;
+  margin-right: 5rem;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+`;
+
+export const NavItem = styled.div``;
+
+export const NavLink = styled.a`
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+
+  &:hover {
+    color: #f00;
+  }
+`;
 
 export const CartLink = styled(BaseLink)``;
 

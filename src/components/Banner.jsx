@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { BannerContainer, TextArea, ImageCarrousel } from './Banner.styles';
-import { getMarvelApiUrl } from '../services/marvelApi';
+import { BannerContainer, TextArea, TextWrapper, CheckButton, ImageCarrousel, ImageContent } from './Banner.styles';
+import Spiderman from  '../assets/images/Spiderman.png'
 
 export default function Banner() {
   return (
     <BannerContainer>
         <TextArea>
-            <h1>Texto do Banner</h1>
-            <p>Descrição aqui</p>
+          <TextWrapper>
+          </TextWrapper>
+          <CheckButton>Explorar edições</CheckButton>
         </TextArea>
         <ImageCarrousel>
-
+            <ImageContent src={Spiderman}></ImageContent>
         </ImageCarrousel>
     </BannerContainer>
   );

@@ -1,11 +1,33 @@
-import md5 from 'crypto-js/md5';
+import md5 from 'md5';
 
-const publicKey = '9c8bdd7ff0e3f0d97825a664290a65d3';
-const privateKey = 'ba58c9d59bb286ed62f252363be977a0d8106ef4';
+const publicKey = import.meta.env.VITE_MARVEL_PUBLIC_KEY;
+const privateKey = import.meta.env.VITE_MARVEL_PRIVATE_KEY;
 
-export function getMarvelApiUrl(endpoint, params = '') {
+export function getMarvelApiUrl(endpoint = 'comics', params = {}) {
   const ts = Date.now().toString();
-  const hash = md5(ts + privateKey + publicKey).toString();
+  // Gera o md5 que é necessário para autenticação da API da Marvel, utilizei a biblioteca 'md5'
+  const hash = md5(ts + privateKey + publicKey);
+  const baseUrl = `https://gateway.marvel.com/v1/public/${endpoint}`;
+  
+  const query = new URLSearchParams({
+    ts,
+    apikey: publicKey,
+    hash,
+    ...params,
+  });
 
-  return `https://gateway.marvel.com/v1/public/${endpoint}?ts=${ts}&apikey=${publicKey}&hash=${hash}${params}`;
+  return `${baseUrl}?${query.toString()}`;
+}
+
+// Marvel API ou API própria com offset e limit
+export async function fetchHQs(offset = 0, limit = 20) {
+  const url = getMarvelApiUrl('comics', {
+    offset,
+    limit,
+    orderBy: 'title',
+  });
+
+  const res = await fetch(url);
+  const json = await res.json();
+  return json.data; // retorna só a parte útil
 }
