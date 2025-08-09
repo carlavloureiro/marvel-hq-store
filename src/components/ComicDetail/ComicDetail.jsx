@@ -25,32 +25,35 @@ export default function HqDetail() {
   const price = hq.prices[0]?.price ?? 'N/A';
 
   function handleAddToCart() {
-    const item = {
-      id: hq.id,
-      title: hq.title,
-      price: hq.prices[0]?.price ?? 0,
-      image: `${hq.thumbnail.path}.${hq.thumbnail.extension}`,
-      quantity: 1,
-    };
+  const item = {
+    id: hq.id,
+    title: hq.title,
+    price: hq.prices[0]?.price ?? 0,
+    image: `${hq.thumbnail.path}.${hq.thumbnail.extension}`,
+    quantity: 1,
+  };
 
-    // Pega o carrinho do localStorage
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  // Pega o carrinho do localStorage
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Verifica se já existe
-    const checkIndex = cart.findIndex(cartItem => cartItem.id === item.id);
+  // Procura se já existe o item no carrinho
+  const existingIndex = cart.findIndex(cartItem => cartItem.id === item.id);
 
-    if (checkIndex >= 0) {
-      cart[checkIndex].quantity += 1;
-    } else {
-      cart.push(item);
-    }
-
-    // Salva no localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    // Redireciona para /cart
-    navigate('/cart'); 
+  if (existingIndex >= 0) {
+    // Já existe → apenas aumenta a quantidade
+    cart[existingIndex].quantity += 1;
+  } else {
+    // Não existe → adiciona ao carrinho
+    cart.push(item);
   }
+
+  // Salva no localStorage
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  // Redireciona para /cart
+  navigate('/cart');
+''}
+
 
   return (
     <>

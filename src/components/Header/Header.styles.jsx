@@ -97,7 +97,12 @@ export const NavItem = styled.div`
 
 export const NavLink = styled(BaseLink)``;
 
-export const CartLink = styled(BaseLink)``;
+export const CartLink = styled(BaseLink)`
+    position: relative;
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+`;
 
 export const CartIcon = styled.i`
   font-size: 2rem;
@@ -107,4 +112,21 @@ export const CartIcon = styled.i`
   @media (min-width: 768px) {
     color: #202020;
   }
+`;
+
+export const CartBadge = styled.span`
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  font-size: 0.6rem;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 3px 6px;
+  min-width: 0.8rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

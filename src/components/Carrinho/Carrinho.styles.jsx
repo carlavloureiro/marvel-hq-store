@@ -13,6 +13,9 @@ export const Container = styled.div`
 `;
 
 export const CarrinhoWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     width: 70vw;
     height: 80vh;
     padding: 1rem;
@@ -70,3 +73,38 @@ export const ItemQuantity = styled.p`
   margin: 0.2rem 0;
   color: #ccc;
 `;
+
+export const ResumoContainer = styled.div`
+  color: #202020;
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f8f8f8;
+  width: 300px;
+`;
+
+export const ResumoTitle = styled.h3`
+  margin-bottom: 10px;
+  font-size: 18px;
+`;
+
+export const ResumoLine = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+`;
+
+export const ResumoTotal = styled(ResumoLine)`
+  font-weight: bold;
+  color: #202020;
+  font-size: 18px;
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+`;
+
+export const ButtonFinalizar = styled.button`
+  width: 200px;
+  outline: none;
+`
