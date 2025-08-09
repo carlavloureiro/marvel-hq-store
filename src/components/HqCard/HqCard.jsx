@@ -14,7 +14,7 @@ export default function HQCard({ comic }) {
           <ComicInfo>
             <h3>{title}</h3>
             <div>
-              <p>${price}</p>
+              <p>R$ {price}</p>
             </div>
           </ComicInfo>
           <AddCartButton><i class="bi bi-cart4"></i>Comprar</AddCartButton>

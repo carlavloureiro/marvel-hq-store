@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 const BaseLink = styled.a`
   display: inline-block;
@@ -28,8 +28,8 @@ export const HeaderContainer = styled.header`
   align-items: center;
   z-index: 1000;
 
-  background-color: ${({ isScrolled }) => (isScrolled ? '#1C1C1C' : 'transparent')};
-  transition: background-color 0.3s ease;
+  background-color: ${({ isCartPage, isScrolled }) =>
+    isCartPage ? '#202020' : (isScrolled ? '#1C1C1C' : 'transparent')};
 
   @media (min-width: 768px) {
     justify-content: space-between;
@@ -99,18 +99,18 @@ export const NavLink = styled(BaseLink)``;
 
 export const CartLink = styled(BaseLink)`
     position: relative;
-  display: inline-block;
-  color: inherit;
-  text-decoration: none;
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
 `;
 
 export const CartIcon = styled.i`
   font-size: 2rem;
   margin-right: 1rem;
-  color: ${({ isScrolled }) => (isScrolled ? '#FAFAFA' : '#FAFAFA')};
 
   @media (min-width: 768px) {
-    color: #202020;
+    color: ${({ isCartPage, isScrolled }) =>
+      isCartPage ? '#FAFAFA' : (isScrolled ? '#FAFAFA' : '#202020')};
   }
 `;
 
