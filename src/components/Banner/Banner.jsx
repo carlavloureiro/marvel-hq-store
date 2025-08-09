@@ -3,12 +3,15 @@ import { BannerContainer, TextArea, TextWrapper, CheckButton, ImageCarrousel, Im
 import Spiderman from '../../assets/images/Spiderman.png';
 import CaptainAmerica from '../../assets/images/CaptainAmerica.png';
 import Hulk from '../../assets/images/Hulk.png'
+import IronMan from '../../assets/images/IronMan.png'
 
 export default function Banner() {
   const herois = [
-  { src: Spiderman, style: { transform: 'scale(1.2)', marginTop: '2rem' } },
-  { src: Hulk, style: { transform: 'scale(0.9)', width: '70% left', marginTop: '6rem' } },
-  { src: CaptainAmerica, style: { transform: 'scale(2)', width: '70% left', marginTop: '2rem' } }];
+  { src: IronMan, style: { transform: 'scale(1.2)', marginTop: '2rem' } }, 
+  { src: Spiderman, style: { transform: 'scale(1.2)', marginTop: '2rem', height: 'auto' } },
+  { src: Hulk, style: { transform: 'scale(0.9)', marginTop: '6rem' } },
+  { src: CaptainAmerica, style: { transform: 'scale(2)', marginTop: '2rem' } },
+  ];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {

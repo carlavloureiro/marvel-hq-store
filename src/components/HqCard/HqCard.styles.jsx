@@ -17,10 +17,6 @@ export const Card = styled.div`
     box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.5);
   }
 
-  @media (min-width: 768px) {
-    width: 300px;
-   height: 500px;
-  }
 `;
 
 export const ComicImage = styled.img`
@@ -53,5 +49,24 @@ export const ComicInfo = styled.div`
     font-family: "Montserrat";
     font-size: 1.5rem;
     font-weight: 700;
+  }
+`;
+
+export const AddCartButton = styled.button`
+  font-family: "Roboto Condensed";
+  background-color: #e62429;
+  color: #FAFAFA;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: #c3191e;
+  }
+
+  i {
+    margin-right: 1rem;
   }
 `;

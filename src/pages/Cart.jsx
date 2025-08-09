@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from '../components/Header/Header';
+import Carrinho from '../components/Carrinho/Carrinho'
 
 export default function Cart() {
   const [cart, setCart] = useState([]);
@@ -21,17 +22,7 @@ export default function Cart() {
   return (
     <>
       <Header />
-      <h1>Carrinho</h1>
-      <ul>
-        {cart.map((item) => (
-          <li key={item.id}>
-            <img src={item.image} alt={item.title} width={80} />
-            <h3>{item.title}</h3>
-            <p>Preço: ${item.price}</p>
-            <p>Quantidade: {item.quantidade}</p>
-          </li>
-        ))}
-      </ul>
-    </>
+      <Carrinho />
+     </> 
   );
 }

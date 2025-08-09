@@ -100,6 +100,7 @@ export const CheckButton = styled.button`
   width: 70%;
   height: 30%;
   font-family: "Orbitron", sans-serif;
+  font-weight: 700;
   font-size: 1.2rem;
   border: none;
   border-radius: 1rem;

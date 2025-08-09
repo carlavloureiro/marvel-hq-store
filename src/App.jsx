@@ -6,7 +6,7 @@ import GlobalStyle from './styles/GlobalStyle';
 function App() {
   return (
     <Router>
-      <GlobalStyle />
+      <GlobalStyle isCartPage={location.pathname === '/cart'}/>
       <AppRoutes />
     </Router>
   );a

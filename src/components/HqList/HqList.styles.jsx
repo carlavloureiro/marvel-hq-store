@@ -20,11 +20,11 @@ export const Container = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 2rem;
+  margin-top: 3rem;
 `;
 
 export const Title = styled.div`
-  display: flex;
-  justify-content: center;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 1rem;
   margin-bottom: 1.5rem;
 `;
@@ -32,7 +32,7 @@ export const Title = styled.div`
 export const CardsWrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 70%;
+  width: 100%;
   flex-wrap: wrap;
   gap: 3rem;
 `;
@@ -40,19 +40,18 @@ export const CardsWrapper = styled.div`
 export const Pagination = styled.div`
   margin-top: 2rem;
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
   align-items: center;
 `;
 
 export const NavButton = styled.button`
   padding: 0.5rem 1rem;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: white;
   background-color: #202020;
-  border-radius: 20px;
+  border-radius: 50px;
   border: none;
   cursor: pointer;
-  margin-right: 1rem;
 
   &:disabled {
     background-color: white;

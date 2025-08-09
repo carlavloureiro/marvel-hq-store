@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Card, ComicImage, ComicInfo } from './HqCard.styles';
+import { Card, ComicImage, ComicInfo, AddCartButton } from './HqCard.styles';
+import { Container } from '../HqList/HqList.styles';
 
 export default function HQCard({ comic }) {
   const { id, title, thumbnail, prices } = comic;
@@ -16,6 +17,7 @@ export default function HQCard({ comic }) {
               <p>${price}</p>
             </div>
           </ComicInfo>
+          <AddCartButton><i class="bi bi-cart4"></i>Comprar</AddCartButton>
         </Card>
       </Link>
 );

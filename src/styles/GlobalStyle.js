@@ -42,13 +42,15 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Arial', sans-serif;
-    background: 
-      linear-gradient(
-        to bottom,
-        rgba(32, 32, 32, 0.9),
-        rgba(142, 0, 0, 0.9)
-      ),
-      url(${backgroundImage});
+    background:
+      ${({ isCartPage }) => isCartPage ? '#202020' : `
+        linear-gradient(
+          to bottom,
+          rgba(32, 32, 32, 0.9),
+          rgba(142, 0, 0, 0.9)
+        ),
+        url(${backgroundImage})
+      `};
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
