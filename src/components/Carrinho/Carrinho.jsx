@@ -1,25 +1,14 @@
-import { useEffect, useState } from 'react';
 import { 
-   Container, CarrinhoWrapper, List, ListItem, ItemImage, ItemDetails, 
-  ItemTitle, ItemPrice, ItemQuantity, ItemControl, ResumoContainer, 
-  ResumoTitle, ResumoLine, ResumoTotal, ButtonFinalizar 
-} from './Carrinho.styles';
+  Container, CarrinhoWrapper, List, ListItem, ItemImage, ItemDetails, ItemTitle, ItemPrice, ItemQuantity, ItemControl, ResumoContainer, ResumoTitle, ResumoLine, ResumoTotal, ButtonFinalizar } from './Carrinho.styles';
+import { useState } from 'react';
 
-export default function Carrinho() {
-  const [cart, setCart] = useState([]);
-  const [selectedItems, setSelectedItems] = useState({});
-
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    setCart(storedCart);
-
-    const initialSelected = {};
-    storedCart.forEach(item => {
-      initialSelected[item.id] = true;
-    });
-    setSelectedItems(initialSelected);
-  }, []);
-
+export default function Carrinho({ cart, onUpdateCart }) {
+  const [selectedItems, setSelectedItems] = useState(
+    cart.reduce((acc, item) => {
+      acc[item.id] = true;
+      return acc;
+    }, {})
+  );
 
   function toggleSelect(id) {
     setSelectedItems(prev => ({
@@ -30,9 +19,7 @@ export default function Carrinho() {
 
   function removeItem(id) {
     const newCart = cart.filter(item => item.id !== id);
-    setCart(newCart);
-    localStorage.setItem('cart', JSON.stringify(newCart));
-
+    onUpdateCart(newCart);
     setSelectedItems(prev => {
       const copy = { ...prev };
       delete copy[id];

@@ -46,8 +46,8 @@ const GlobalStyle = createGlobalStyle`
       ${({ isCartPage }) => isCartPage ? '#202020' : `
         linear-gradient(
           to bottom,
-          rgba(32, 32, 32, 0.9),
-          rgba(142, 0, 0, 0.9)
+          rgba(27, 27, 27, 0.9),
+          rgba(122, 46, 32, 0.9)
         ),
         url(${backgroundImage})
       `};

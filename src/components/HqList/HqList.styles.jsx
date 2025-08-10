@@ -20,7 +20,7 @@ export const Container = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  margin-top: 3rem;
+
 `;
 
 export const Title = styled.div`
@@ -42,11 +42,15 @@ export const Pagination = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
+
+  span {
+    font-family: "Roboto Condensed", sans-serif;
+  }
 `;
 
 export const NavButton = styled.button`
   padding: 0.5rem 1rem;
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   color: white;
   background-color: #202020;
   border-radius: 50px;

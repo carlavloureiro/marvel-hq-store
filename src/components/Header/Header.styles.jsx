@@ -20,16 +20,16 @@ export const HeaderContainer = styled.header`
   left: 0;
   width: 100vw;
   height: auto;
-  padding: 1rem;
   justify-content: center;
-  gap: 4rem;
+  padding: 1rem;
+  gap: 3rem;
   color: #F5F5F5;
   display: flex;
   align-items: center;
   z-index: 1000;
 
   background-color: ${({ isCartPage, isScrolled }) =>
-    isCartPage ? '#202020' : (isScrolled ? '#1C1C1C' : 'transparent')};
+    isCartPage ? '#202020' : (isScrolled ? 'rgba(40, 30, 30, 0.85)' : 'transparent')};
 
   @media (min-width: 768px) {
     justify-content: space-between;
@@ -37,21 +37,21 @@ export const HeaderContainer = styled.header`
   }
 `;
 
-export const Logo = styled.img`
-  width: 7rem; 
+export const Logo = styled.img` 
   height: auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0;
 
   @media (min-width: 480px) {
     width: 9rem;
   }
 
   @media (min-width: 564px) {
-    margin-right: 6rem;
+    margin-right: 5rem;
   }
 
   @media (min-width: 768px) {
-    width: 14rem;
+    width: 9rem;
   }
 `;
 
@@ -95,7 +95,40 @@ export const NavBar = styled.nav`
 export const NavItem = styled.div`
 `;
 
-export const NavLink = styled(BaseLink)``;
+export const NavLink = styled(BaseLink)`
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5%;      
+    width: 100%;        
+    height: 0.2rem;       
+    
+    background: linear-gradient(
+      to right,
+      rgba(237, 29, 36, 0) 0%,        
+      rgba(237, 29, 36, 0.8) 40%,    
+      rgba(237, 29, 36, 1) 50%,       
+      rgba(237, 29, 36, 0.8) 60%,    
+      rgba(237, 29, 36, 0) 100%      
+    );
+    
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: center;
+    border-radius: 4px;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+`;
+
 
 export const CartLink = styled(BaseLink)`
     position: relative;
@@ -109,9 +142,7 @@ export const CartIcon = styled.i`
   margin-right: 1rem;
 
   @media (min-width: 768px) {
-    color: ${({ isCartPage, isScrolled }) =>
-      isCartPage ? '#FAFAFA' : (isScrolled ? '#FAFAFA' : '#202020')};
-  }
+    color: #FAFAFA;
 `;
 
 export const CartBadge = styled.span`

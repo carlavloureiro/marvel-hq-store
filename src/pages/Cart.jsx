@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from '../components/Header/Header';
-import Carrinho from '../components/Carrinho/Carrinho'
+import Carrinho from '../components/Carrinho/Carrinho';
+import { EmptyCart } from '../components/Carrinho/Carrinho.styles';
 
 export default function Cart() {
   const [cart, setCart] = useState([]);
@@ -10,11 +11,18 @@ export default function Cart() {
     setCart(storedCart);
   }, []);
 
+  function handleUpdateCart(newCart) {
+    setCart(newCart);
+    localStorage.setItem('cart', JSON.stringify(newCart));
+  }
+
   if (cart.length === 0) {
     return (
       <>
         <Header />
-        <p>Seu carrinho está vazio.</p>
+        <EmptyCart>
+          <p>Seu carrinho está vazio.</p>
+        </EmptyCart>
       </>
     );
   }
@@ -22,7 +30,7 @@ export default function Cart() {
   return (
     <>
       <Header />
-      <Carrinho />
-     </> 
+      <Carrinho cart={cart} onUpdateCart={handleUpdateCart} />
+    </>
   );
 }

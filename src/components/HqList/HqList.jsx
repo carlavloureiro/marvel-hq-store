@@ -15,7 +15,7 @@ export default function HQList() {
       setLoading(true);
       const data = await fetchHQs(offset, limit);
       setHqs(data.results);
-      setTotal(data.total); // total de HQs retornado pela API
+      setTotal(data.total);
       setLoading(false);
     }
 
@@ -54,9 +54,9 @@ export default function HQList() {
           </CardsWrapper>
 
           <Pagination>
-            <NavButton onClick={handlePrevPage} className="bi bi-arrow-left" disabled={currentPage === 1}></NavButton>
+            <NavButton onClick={handlePrevPage} disabled={currentPage === 1}>Anterior</NavButton>
             <span>{currentPage} / {totalPages}</span>
-            <NavButton onClick={handleNextPage} className="bi bi-arrow-right" disabled={currentPage === totalPages}></NavButton>
+            <NavButton onClick={handleNextPage} disabled={currentPage === totalPages}>Próximo</NavButton>
           </Pagination>
         </>
       )}

@@ -158,3 +158,17 @@ export const ItemControl = styled.div`
   align-items: center;
   margin-top: 10px;
 `;
+
+export const EmptyCart = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 70vh;
+  margin: auto;
+  color: #fafafa;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+`;

@@ -49,14 +49,14 @@ export default function Header() {
 
       <MobileMenu isOpen={isMenuOpen}>
         <NavItem><NavLink href="/">Início</NavLink></NavItem>
-        <NavItem><NavLink href="/produtos">Produtos</NavLink></NavItem>
-        <NavItem><NavLink href="/sobre">Sobre</NavLink></NavItem>
+        <NavItem><NavLink href="/#hq-list">Produtos</NavLink></NavItem>
+        <NavItem><NavLink href="/#sobre">Sobre</NavLink></NavItem>
       </MobileMenu>
 
       <NavBar>
         <NavItem><NavLink href="/">Início</NavLink></NavItem>
         <NavItem><NavLink href="/#hq-list">Produtos</NavLink></NavItem>
-        <NavItem><NavLink href="/sobre">Sobre</NavLink></NavItem>
+        <NavItem><NavLink href="/#sobre">Sobre</NavLink></NavItem>
       </NavBar>
 
       <CartLink href="/cart">
