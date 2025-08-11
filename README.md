@@ -2,7 +2,14 @@
 
 ---
 
-![Marvel Logo](https://logodownload.org/wp-content/uploads/2017/05/marvel-logo-0.png)
+![Marvel Logo](https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/eafb5739-e9db-4a02-bc09-9b88be835ea5/deg04zd-91232057-059b-4a17-906b-126292445d7f.png)
+
+---
+
+## 🌐 Link do Projeto
+
+Você pode acessar o projeto online neste link:  
+[https://carlavloureiro.github.io/marvel-hq-store/](https://carlavloureiro.github.io/marvel-hq-store/)
 
 ---
 
