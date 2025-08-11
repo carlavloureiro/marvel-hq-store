@@ -13,7 +13,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename='/marvel-hq-store'>
       <GlobalStyle />
       <AppRoutes />
     </Router>
