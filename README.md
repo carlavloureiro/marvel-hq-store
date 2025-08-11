@@ -2,7 +2,7 @@
 
 ---
 
-![Marvel Logo](https://upload.wikimedia.org/wikipedia/commons/0/04/MarvelLogo.svg)
+![Marvel Logo](https://logodownload.org/wp-content/uploads/2017/05/marvel-logo-0.png)
 
 ---
 
