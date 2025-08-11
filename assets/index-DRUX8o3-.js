@@ -521,13 +521,13 @@ Please change the parent <Route path="${j}"> to <Route path="${j==="/"?"*":`${j}
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4rem 0;
-  width: 100vw;
-  height: 100vh;
-  padding-top: 6rem;
+  width: 100%;
+  height: 100%;
+  padding-top: 5rem;
 
   @media (min-width: 768px) {
     padding: 4rem 0;
+    height: 100vh;
   }
 `,Tb=K.div`
   display: flex;
