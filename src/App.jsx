@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import AppRoutes from './routes/AppRoutes';
 import GlobalStyle from './styles/GlobalStyle';
+import ScrollToHash from './components/ScrollToHash';
 
 function App() {
   useEffect(() => {
@@ -13,8 +14,9 @@ function App() {
   }, []);
 
   return (
-    <Router basename='/marvel-hq-store'>
+    <Router basename="/marvel-hq-store">
       <GlobalStyle />
+      <ScrollToHash />
       <AppRoutes />
     </Router>
   );

@@ -39,10 +39,6 @@ export default function Carrinho({ cart, onUpdateCart }) {
   function handleCompra() {
     setShowMessage(true);
     setTimeout(() => setShowMessage(false), 4000);
-
-    console.log("%c👋 Olá recrutador(a)!",
-      "color: #e62429; font-size: 20px; font-weight: bold;");
-    console.log("Espero que tenha curtido este projeto tanto quanto eu gostei de construí-lo! 🚀");
   }
 
   return (
