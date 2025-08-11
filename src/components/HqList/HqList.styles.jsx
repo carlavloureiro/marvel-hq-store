@@ -19,14 +19,19 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
-
 `;
 
 export const Title = styled.div`
-  font-family: "Roboto Condensed", sans-serif;
-  font-size: 1rem;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.7rem;
+  margin-top: 2rem;
+  text-align: center;
   margin-bottom: 1.5rem;
+  background-color: blue
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 export const CardsWrapper = styled.div`
@@ -34,11 +39,12 @@ export const CardsWrapper = styled.div`
   justify-content: center;
   width: 100%;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 1rem;
 `;
 
 export const Pagination = styled.div`
   margin-top: 2rem;
+  margin-bottom: 3rem;
   display: flex;
   gap: 1rem;
   align-items: center;

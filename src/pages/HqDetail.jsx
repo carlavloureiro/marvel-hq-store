@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import Header from '../components/Header/Header';
-import ComicDetail from '../components/ComicDetail/ComicDetail'
+import ComicDetail from '../components/HqDetail/HqDetail';
 
 export default function HqDetail() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <>
-      <Header />
-      <ComicDetail />
+      {!isLoading && <Header />}
+      <ComicDetail onLoadingChange={setIsLoading} />
     </>
   );
 }

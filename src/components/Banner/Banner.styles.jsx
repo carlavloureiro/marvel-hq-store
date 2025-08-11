@@ -14,6 +14,7 @@ const aparecer = keyframes`
 export const BannerContainer = styled.section`
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100vw;
   height: 100vh;
 `;
@@ -24,10 +25,8 @@ export const TextArea = styled.div`
   justify-content: center;
   width: 80vw;
   height: 100vh;
-  padding: 1rem 0;
   z-index: 1;
   animation: ${aparecer} 1.5s ease forwards;
-  animation-delay: 0.5s;
 
   @media (min-width: 768px) {
     width: 100vw;
@@ -49,7 +48,7 @@ export const TextWrapper = styled.div`
 
   h3 {
     font-family: "Orbitron", sans-serif;
-    font-size: 2.8rem;
+    font-size: 2.3rem;
     font-weight: 800;
   }
 
@@ -58,6 +57,12 @@ export const TextWrapper = styled.div`
     font-weight: 300;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 572px) {
+    h3 {
+      font-size: 2.8rem;
+    }
   }
 `;
 

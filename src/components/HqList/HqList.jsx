@@ -8,7 +8,7 @@ export default function HQList() {
   const [offset, setOffset] = useState(0);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
-  const limit = 10;
+  const limit = 16;
 
   useEffect(() => {
     async function loadHQs() {

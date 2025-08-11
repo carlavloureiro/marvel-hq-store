@@ -1,13 +1,13 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   width: 100vw;
-  min-height: 80vh;
-  margin-top: 5rem;
+  min-height: 100vh;
+  margin-top: 7rem;
   color: #FAFAFA;
   font-family: "Montserrat";
   padding: 1rem;
@@ -16,22 +16,21 @@ export const Container = styled.div`
 export const CarrinhoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  width: 100%; 
+  justify-content: center;
+  align-items: center;
+  width: 100vh; 
   height: auto;
-  max-height: 80vh;
-  padding: 1rem;
   background-color: #FAFAFA;
   border: 1px solid rgba(250, 250, 250, 0.5);
   border-radius: 10px;
   overflow-y: auto;
   box-sizing: border-box;
+  padding: 0.8rem;
 
-  @media(min-width: 768px) {
-    flex-direction: row;  
-    width: 70%;
+  @media(min-width: 576px) {
+    justify-content: flex-start;
+    width: 50vw;
     height: auto;
-    max-height: none;
     gap: 3rem;
   }
 `;
@@ -54,8 +53,9 @@ export const ListItem = styled.li`
   display: flex;
   width: 100%;  
   align-items: center;
+  justify-content: center;
   gap: 1rem;
-  background-color: #FAFAFA;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
   border-radius: 8px;
   padding: 0.5rem;
   margin-bottom: 1rem;
@@ -103,7 +103,7 @@ export const ResumoContainer = styled.div`
   border: 1px solid #ddd;
   border-radius: 10px;
   background: #f8f8f8;
-  width: 100%;
+  width: 80vw;
 
   @media(min-width: 768px) {
     width: 35%;
@@ -147,16 +147,20 @@ export const ButtonFinalizar = styled.button`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #F0141E;
+    background-color: #c8101b;
   }
 `;
 
 export const ItemControl = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: start;
   gap: 1rem;
   align-items: center;
   margin-top: 10px;
+  
+  i {
+    font-size: 1rem
+  }
 `;
 
 export const EmptyCart = styled.div`
@@ -172,3 +176,34 @@ export const EmptyCart = styled.div`
   font-size: 1.5rem;
   text-align: center;
 `;
+
+export const MessageOverlay = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #b71c1c;  
+  box-shadow: 0 0 15px 4px rgba(183, 28, 28, 0.7); 
+  color: #fff;
+  font-size: 1.4rem;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 10px;
+  z-index: 2001;
+  text-align: center;
+  max-width: 100%;
+
+  @media (min-width: 768px) {
+    padding: 1rem 2rem;
+  }
+`;
+
+export const DevBadge = styled.div`
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+`;
+

@@ -1,5 +1,5 @@
 import { 
-  Container, CarrinhoWrapper, List, ListItem, ItemImage, ItemDetails, ItemTitle, ItemPrice, ItemQuantity, ItemControl, ResumoContainer, ResumoTitle, ResumoLine, ResumoTotal, ButtonFinalizar } from './Carrinho.styles';
+  Container, CarrinhoWrapper, List, ListItem, ItemImage, ItemDetails, ItemTitle, ItemPrice, ItemQuantity, ItemControl, ResumoContainer, ResumoTitle, ResumoLine, ResumoTotal, ButtonFinalizar, MessageOverlay, DevBadge } from './Carrinho.styles';
 import { useState } from 'react';
 
 export default function Carrinho({ cart, onUpdateCart }) {
@@ -9,6 +9,8 @@ export default function Carrinho({ cart, onUpdateCart }) {
       return acc;
     }, {})
   );
+
+  const [showMessage, setShowMessage] = useState(false);
 
   function toggleSelect(id) {
     setSelectedItems(prev => ({
@@ -33,6 +35,15 @@ export default function Carrinho({ cart, onUpdateCart }) {
     }
     return acc;
   }, 0);
+
+  function handleCompra() {
+    setShowMessage(true);
+    setTimeout(() => setShowMessage(false), 4000);
+
+    console.log("%c👋 Olá recrutador(a)!",
+      "color: #e62429; font-size: 20px; font-weight: bold;");
+    console.log("Espero que tenha curtido este projeto tanto quanto eu gostei de construí-lo! 🚀");
+  }
 
   return (
     <Container>
@@ -76,9 +87,21 @@ export default function Carrinho({ cart, onUpdateCart }) {
             <span>Total:</span>
             <span>R$ {total.toFixed(2)}</span>
           </ResumoTotal>
-          <ButtonFinalizar>Comprar (R$ {total.toFixed(2)})</ButtonFinalizar>
+          <ButtonFinalizar onClick={handleCompra}>
+            Comprar (R$ {total.toFixed(2)})
+          </ButtonFinalizar>
         </ResumoContainer>
       </CarrinhoWrapper>
+
+      {showMessage && (
+        <MessageOverlay>
+          Parabéns! Você acaba de salvar o mundo dos carrinhos vazios.
+          <DevBadge>
+             Foi tão divertido codar isso quanto seria comprar essas HQs na vida real!
+            Obrigada por revisar este projeto!
+          </DevBadge>
+        </MessageOverlay>
+      )}
     </Container>
   );
 }

@@ -15,21 +15,18 @@ const BaseLink = styled.a`
 `;
 
 export const HeaderContainer = styled.header`
+  display: flex;
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: auto;
-  justify-content: center;
-  padding: 1rem;
+  justify-content: space-between;
+  padding: 0.8rem;
   gap: 3rem;
   color: #F5F5F5;
-  display: flex;
   align-items: center;
   z-index: 1000;
 
-  background-color: ${({ isCartPage, isScrolled }) =>
-    isCartPage ? '#202020' : (isScrolled ? 'rgba(40, 30, 30, 0.85)' : 'transparent')};
+  background-color: ${({isScrolled }) => (isScrolled ? 'rgba(40, 30, 30, 0.85)' : 'transparent')};
 
   @media (min-width: 768px) {
     justify-content: space-between;
@@ -41,10 +38,7 @@ export const Logo = styled.img`
   height: auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin: 0;
-
-  @media (min-width: 480px) {
-    width: 9rem;
-  }
+  width: 8rem;
 
   @media (min-width: 564px) {
     margin-right: 5rem;
@@ -71,7 +65,7 @@ export const MobileMenu = styled.nav`
   top: 100%;
   left: 0;
   right: 0;
-  background-color: rgba(32, 32, 32, 0.95);
+  background-color: rgba(40, 30, 30, 0.85);
   display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
   flex-direction: column;
   gap: 1rem;
@@ -139,7 +133,7 @@ export const CartLink = styled(BaseLink)`
 
 export const CartIcon = styled.i`
   font-size: 2rem;
-  margin-right: 1rem;
+  margin-right: 2rem;
 
   @media (min-width: 768px) {
     color: #FAFAFA;
