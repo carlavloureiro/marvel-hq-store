@@ -30,6 +30,11 @@ export const DetailContainer = styled.div`
   padding: 4rem 0;
   width: 100vw;
   height: 100vh;
+  padding-top: 6rem;
+
+  @media (min-width: 768px) {
+    padding: 4rem 0;
+  }
 `;
 
 export const ComicWrapper = styled.div`
