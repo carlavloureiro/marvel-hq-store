@@ -46,6 +46,12 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden; 
   }
 
+  html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  }
+
  body {
   background:
     linear-gradient(

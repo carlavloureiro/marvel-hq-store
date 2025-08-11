@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { HeaderContainer, Logo, LogoLink, HamburgerButton, MobileMenu, NavBar, NavItem, NavLink, CartLink, CartIcon, CartBadge } from './Header.styles.jsx';
 import LogoImg from '../../assets/images/Logo.png';
 
@@ -49,17 +49,17 @@ export default function Header() {
 
       <MobileMenu isOpen={isMenuOpen}>
         <NavItem><NavLink as={Link} to="/">Início</NavLink></NavItem>
-        <NavItem><NavLink as={Link} to="#hq-list">Produtos</NavLink></NavItem>
-        <NavItem><NavLink as={Link} to="#sobre">Sobre</NavLink></NavItem>
+        <NavItem><NavLink href="#hq-list">Produtos</NavLink></NavItem>  
+        <NavItem><NavLink href="#sobre">Sobre</NavLink></NavItem>    
       </MobileMenu>
 
       <NavBar>
-        <NavItem><NavLink as={Link} to="/">Início</NavLink></NavItem>
-        <NavItem><NavLink as={Link} to="#hq-list">Produtos</NavLink></NavItem>
-        <NavItem><NavLink as={Link} to="#sobre">Sobre</NavLink></NavItem>
+          <NavItem><NavLink as={Link} to="/">Início</NavLink></NavItem>
+        <NavItem><NavLink href="#hq-list">Produtos</NavLink></NavItem>
+        <NavItem><NavLink href="#sobre">Sobre</NavLink></NavItem>
       </NavBar>
 
-      <CartLink href="/cart">
+      <CartLink as={Link} to="/cart">
         <CartIcon isScrolled={isScrolled} isCartPage={isCartPage} className="bi bi-cart" />
         {cartCount > 0 && <CartBadge>{cartCount}</CartBadge>}
       </CartLink>
