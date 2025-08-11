@@ -48,15 +48,15 @@ export default function Header() {
       <HamburgerButton onClick={toggleMenu} className="bi bi-list" />
 
       <MobileMenu isOpen={isMenuOpen}>
-        <NavItem><NavLink href="/">Início</NavLink></NavItem>
-        <NavItem><NavLink href="/#hq-list">Produtos</NavLink></NavItem>
-        <NavItem><NavLink href="/#sobre">Sobre</NavLink></NavItem>
+        <NavItem><NavLink as={Link} to="/">Início</NavLink></NavItem>
+        <NavItem><NavLink as={Link} to="#hq-list">Produtos</NavLink></NavItem>
+        <NavItem><NavLink as={Link} to="#sobre">Sobre</NavLink></NavItem>
       </MobileMenu>
 
       <NavBar>
-        <NavItem><NavLink href="/">Início</NavLink></NavItem>
-        <NavItem><NavLink href="/#hq-list">Produtos</NavLink></NavItem>
-        <NavItem><NavLink href="/#sobre">Sobre</NavLink></NavItem>
+        <NavItem><NavLink as={Link} to="/">Início</NavLink></NavItem>
+        <NavItem><NavLink as={Link} to="#hq-list">Produtos</NavLink></NavItem>
+        <NavItem><NavLink as={Link} to="#sobre">Sobre</NavLink></NavItem>
       </NavBar>
 
       <CartLink href="/cart">
