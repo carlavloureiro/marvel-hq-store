@@ -41,7 +41,7 @@ export default function Header() {
 
   return (
     <HeaderContainer isScrolled={isScrolled} isCartPage={isCartPage}>
-      <LogoLink href="/">
+      <LogoLink as={Link} to="/">
         <Logo src={LogoImg} alt="Logo Marvel" />
       </LogoLink>
 
